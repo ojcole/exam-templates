@@ -1,10 +1,10 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[margin=0pt]{geometry}
 \usepackage{pgffor}
-\usepackage{background}
+\usepackage[margin=0pt]{geometry}
 \usepackage{xcolor}
+\usepackage{eso-pic}
 \renewcommand{\familydefault}{\sfdefault}
 
 
@@ -17,6 +17,8 @@
 \newcommand{\@pages}[0]{20}
 \newcommand{\pages}[1]{\renewcommand{\@pages}{#1}}
 
+\definecolor{marginred}{RGB}{200, 0, 0}
+
 \makeatother
 
 \setlength{\parindent}{0pt}
@@ -26,14 +28,17 @@
 
 \input{settings}
 
-\SetBgScale{1pt}
-\SetBgAngle{0pt}
-\SetBgColor{red}
-\SetBgContents{\rule{.4pt}{\paperheight}}
-\SetBgHshift{-73mm}
+\pagecolor{white}
 
 
 \makeatletter
+
+\AddToShipoutPictureFG{%
+    \setlength\unitlength{64mm}%
+    \AtPageUpperLeft{%
+        \textcolor{marginred}{\put(0.5,-\paperheight){\vrule width .5pt height \paperheight}}%
+    }%
+}
 
 \begin{document}
 
