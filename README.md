@@ -1,6 +1,6 @@
 # Exam Templates
 
-Template PDFs for University of Warwick's online exams to be imported into your favourite note taking application.
+Template PDFs for University of Warwick's online exams to be imported into your favourite note taking application. An example of the template can be seen in `template.pdf`.
 
 # Usage
 
