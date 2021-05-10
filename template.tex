@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0pt]{geometry}
+\usepackage{pgffor}
+\usepackage{background}
+\usepackage{xcolor}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\pagestyle{empty}
+
+\makeatletter
+
+\newcommand{\@userid}[0]{XXXXXXX}
+\newcommand{\userid}[1]{\renewcommand{\@userid}{#1}}
+\newcommand{\@pages}[0]{20}
+\newcommand{\pages}[1]{\renewcommand{\@pages}{#1}}
+
+\makeatother
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\grayrule}[0]{\textcolor{lightgray}{\rule{\linewidth}{1pt}}}
+
+\input{settings}
+
+\SetBgScale{1pt}
+\SetBgAngle{0pt}
+\SetBgColor{red}
+\SetBgContents{\rule{.4pt}{\paperheight}}
+\SetBgHshift{-73mm}
+
+
+\makeatletter
+
+\begin{document}
+
+\foreach \n in {1,...,20}{
+    \vspace*{16mm}
+    {\hspace{10pt}\Large Page \thepage \hfill University ID:~\@userid \hspace{10pt}} \\
+    \foreach \i in {0,...,21}{
+        \grayrule
+        \vspace*{7mm}
+      }
+    \clearpage
+  }%
+
+\end{document}
